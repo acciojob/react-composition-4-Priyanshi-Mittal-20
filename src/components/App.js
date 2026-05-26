@@ -1,13 +1,35 @@
-
 import React from "react";
-import './../styles/App.css';
+import Form from "./Form";
 
 const App = () => {
+
+  const fields = [
+    {
+      name: "name",
+      type: "text",
+      label: "Name"
+    },
+    {
+      name: "email",
+      type: "email",
+      label: "Email"
+    },
+    {
+      name: "password",
+      type: "password",
+      label: "Password"
+    }
+  ];
+
+  function handleSubmit(data) {
+    console.log(data);
+  }
+
   return (
     <div>
-        {/* Do not remove the main div */}
+      <Form fields={fields} onSubmit={handleSubmit} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
